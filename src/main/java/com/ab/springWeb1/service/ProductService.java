@@ -18,4 +18,9 @@ public class ProductService {
             new Product(104,"Iphone-13pro",40000),
             new Product(105,"Iphone-14",45000));
 
+    public Product getProductById(int prodId) {
+        return products.stream() //steam api for easy find
+                .filter(p -> p.getProdId() == prodId)
+                .findFirst().orElse(new Product(100,"not item found",28)); // or get()
+    }
 }

@@ -3,8 +3,8 @@ package com.ab.springWeb1.model;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
-@Getter
-@Setter
+@Getter // all getter fun created auto by lombok
+@Setter // all setter fun
 @NoArgsConstructor
 @Data
 @AllArgsConstructor // create constructor auto
