@@ -14,6 +14,10 @@ public class HomeController {
         System.out.println("I am here.");
         return "Welcome to ab!!";
     }
+    @RequestMapping("/ab")
+    public String factorial(){
+        return "ab didn't go to college...";
+    }
 
     @RequestMapping("/about")
     public String about(){
