@@ -12,6 +12,8 @@ import java.util.List;
 @RestController
 public class ProductController {
 
+//    field injection is Autowired
+//    auto connect to ProductService or it,s type and also spring will  auto create class of it
     @Autowired
     ProductService service;
 
