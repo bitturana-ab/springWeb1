@@ -3,6 +3,7 @@ package com.ab.springWeb1.service;
 import com.ab.springWeb1.model.Product;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,17 +11,18 @@ import java.util.List;
 public class ProductService {
 
 //    create dummy data coll, but we should use DB for data
-    List<Product> products = Arrays.asList(
+    List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(01,"samsung a54",34000),
             new Product(02,"samsung a55",45000),
             new Product(03,"samsung a53",42000)
-);
+));
 
+//    get all products
     public List<Product> getProducts(){
         return products;
     }
 
-
+// get product by prodId
     public Product getProductById(int prodId) {
 //        or use stream api for filter but now im using for loop
 //        for(int i = 0;i<products.toArray().length;i++){
@@ -33,6 +35,13 @@ public class ProductService {
         }
         return new Product(0,"not found",00);
     }
+
+//    add Product to products and return message
+    public String addProduct(Product prod){
+        products.add(prod);
+        return "added";
+    }
+
 }
 
 

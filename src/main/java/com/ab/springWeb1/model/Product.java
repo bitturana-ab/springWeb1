@@ -16,7 +16,14 @@ public class Product {
     private int prodPrice;
 
 
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "prodId=" + prodId +
+                ", prodName='" + prodName + '\'' +
+                ", prodPrice=" + prodPrice +
+                '}';
+    }
 
     public int getProdId() {
         return prodId;
