@@ -1,5 +1,7 @@
 package com.ab.springWeb1.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +11,10 @@ import org.springframework.stereotype.Component;
 @Data
 @AllArgsConstructor // create constructor auto
 @Component
+@Entity // covert class to db entity in ProductRepo
 public class Product {
 
+    @Id
     private int prodId;
     private String prodName;
     private int prodPrice;
