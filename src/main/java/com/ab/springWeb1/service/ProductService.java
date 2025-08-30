@@ -13,7 +13,7 @@ public class ProductService {
 //    create dummy data coll, but we should use DB for data
     List<Product> products = new ArrayList<>(Arrays.asList(
             new Product(01,"samsung a54",34000),
-            new Product(02,"samsung a55",45000),
+            new Product(02  ,"samsung a55",45000),
             new Product(03,"samsung a53",42000)
 ));
 
@@ -42,6 +42,28 @@ public class ProductService {
         return "added";
     }
 
+    public String updateProduct(Product prod) {
+        for(Product pro : products){
+            if(pro.getProdId()+1 == prod.getProdId()){
+                products.set(pro.getProdId(),prod);
+                return "updated";
+            }
+        }
+        return "not updated";
+    }
+
+    public String deleteProduct(int prodId) {
+        if(products.removeIf(pro -> pro.getProdId() == prodId)) return "deleted";
+
+//        another easy way
+//        for (Product pro : products){
+//            if(pro.getProdId() == prodId){
+//                products.remove(pro);
+//                return "deleted";
+//            }
+//        }
+        return "not deleted";
+    }
 }
 
 
